@@ -218,7 +218,7 @@ module.exports = {
   // Experimental features for performance
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['@nextui-org/react', 'lucide-react'],
+    optimizePackageImports: ['@heroui/react', 'lucide-react'],
     turbo: {
       resolveExtensions: ['.tsx', '.ts', '.jsx', '.js']
     }

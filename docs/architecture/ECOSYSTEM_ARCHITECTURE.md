@@ -205,8 +205,8 @@ User Interaction → Client Component
 ```javascript
 // next.config.js
 modularizeImports: {
-  '@nextui-org/react': {
-    transform: '@nextui-org/{{member}}'
+  '@heroui/react': {
+    transform: '@heroui/{{member}}'
   },
   'lucide-react': {
     transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}'

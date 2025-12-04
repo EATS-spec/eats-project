@@ -28,7 +28,7 @@ This repository contains two interconnected applications:
 ### **[eats-frontend/](./eats-frontend/)** - Next.js Frontend
 The consumer-facing web application built with Next.js 15, React 18, and TypeScript.
 
-- **Tech Stack**: Next.js 15, React 18, TypeScript, Tailwind CSS, NextUI
+- **Tech Stack**: Next.js 15, React 18, TypeScript, Tailwind CSS v4, HeroUI
 - **Features**: PWA, Advanced Search, Social Features, Cooking Tools
 - **Deployment**: Vercel (Production-ready)
 - **Documentation**: [eats-frontend/docs/](./eats-frontend/docs/)
@@ -256,8 +256,8 @@ User Request → Next.js → Sanity CMS → Processing → UI Rendering
 - Next.js 15.3.4 (App Router)
 - React 18.2.0
 - TypeScript 5.x
-- Tailwind CSS 3.4.17
-- NextUI Components
+- Tailwind CSS 4.1.x
+- HeroUI Components
 - Framer Motion
 
 **Backend & Services**
@@ -364,7 +364,7 @@ This project is proprietary. All rights reserved.
 - [Sanity Documentation](https://www.sanity.io/docs)
 - [Supabase Documentation](https://supabase.com/docs)
 - [Tailwind CSS](https://tailwindcss.com/docs)
-- [NextUI Components](https://nextui.org/)
+- [HeroUI Components](https://heroui.com/)
 
 ---
 
