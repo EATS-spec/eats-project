@@ -28,6 +28,13 @@ Roadmaps, future features, and project vision.
 **Key Documents:**
 - **[INNOVATION_ROADMAP.md](./planning/INNOVATION_ROADMAP.md)** - Upcoming features and possibilities
 
+### 🤖 Development Tools
+Development notes and tooling configuration.
+
+**Key Documents:**
+- **[AGENTS.md](./AGENTS.md)** - Agent workflow notes (browser automation, DevTools MCP)
+- **[CHROME_DEVTOOLS_MCP.md](./CHROME_DEVTOOLS_MCP.md)** - Chrome DevTools MCP setup guide
+
 ### 📦 [Archive](./archive/)
 Historical documentation, completed UX analyses, and past project artifacts.
 
@@ -97,4 +104,4 @@ For project-specific documentation (deployment, testing, monitoring), see the `d
 
 ---
 
-*Last updated: 2025-10-17*
+*Last updated: 2025-12-04*
