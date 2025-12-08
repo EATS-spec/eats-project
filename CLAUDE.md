@@ -198,6 +198,57 @@ The frontend uses a Post Adapter (`eats-frontend/lib/adapters/post-adapter.ts`) 
 
 Monitor adapter performance at: `http://localhost:3000/dev/adapter-monitor`
 
+### AI Recipe Creation (Quick Workflow)
+
+**Use `/recipe [name]` command** to quickly generate recipes.
+
+**Preferred Schema**: Use `recipe` type (not `jsonPost`) - it's the new AI-friendly format.
+
+**Two Deployment Options**:
+
+1. **Via Sanity Studio** (current):
+   - Run `/recipe [name]` to generate the JSON
+   - Open Sanity Studio: https://eats-sanity.sanity.studio/
+   - Create new Recipe document and paste the values
+   - Publish
+
+2. **Direct MCP Creation** (requires Sanity 3.88.0+):
+   - First upgrade: `cd sanity && npm install sanity@latest`
+   - Deploy schema: `npx sanity schema deploy`
+   - Then use `mcp__sanity__create_document` with:
+     - `resource`: `{"projectId": "5r8ri1sg", "dataset": "production"}`
+     - `workspaceName`: `default`
+     - `type`: `recipe`
+
+**Minimal Recipe Template** (for quick AI generation):
+```json
+{
+  "_type": "recipe",
+  "title": "Recipe Name",
+  "slug": { "_type": "slug", "current": "recipe-name" },
+  "description": "Brief description (max 300 chars)",
+  "prepTime": 15,
+  "cookTime": 30,
+  "servings": "4",
+  "difficulty": "easy",
+  "cuisineType": "American",
+  "ingredientSections": [{
+    "sectionTitle": null,
+    "items": [
+      { "text": "2 cups flour", "optional": false }
+    ]
+  }],
+  "steps": [{
+    "instruction": "Step 1 instruction here",
+    "tip": null
+  }],
+  "tags": ["tag1", "tag2"],
+  "featured": false
+}
+```
+
+**Full field list**: See `sanity/schemaTypes/recipe.ts`
+
 ### Image Handling
 All images flow through Sanity's CDN:
 ```typescript
