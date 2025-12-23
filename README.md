@@ -123,6 +123,7 @@ SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 
 # Optional
 SANITY_API_TOKEN=your-token
+SANITY_PREVIEW_SECRET=your-preview-secret # Must match SANITY_STUDIO_PREVIEW_SECRET
 UPSTASH_REDIS_REST_URL=your-redis-url
 UPSTASH_REDIS_REST_TOKEN=your-redis-token
 REVALIDATION_SECRET=your-revalidation-secret
@@ -132,7 +133,12 @@ DEBUG_API_KEY=your-debug-api-key
 ```
 
 #### Sanity
-Configuration is in `sanity.config.ts` - no `.env` file needed.
+Configuration is in `sanity.config.ts`. For draft previews, set:
+
+```bash
+SANITY_STUDIO_PREVIEW_URL=http://localhost:3000
+SANITY_STUDIO_PREVIEW_SECRET=your-preview-secret
+```
 
 ### Installation
 
