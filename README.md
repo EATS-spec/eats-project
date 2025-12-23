@@ -8,9 +8,14 @@ A full-stack, performant recipe and food blog application featuring AI integrati
 # Clone and navigate to repository
 cd EATS\ Sanity\ CMS\ -\ Frontend
 
-# Start both frontend and CMS locally
-cd eats-frontend && npm run dev &    # Frontend: http://localhost:3000
-cd sanity && npm run dev             # CMS Studio: http://localhost:3333
+# Install deps (no root install needed)
+npm --prefix eats-frontend install
+npm --prefix sanity install
+
+# Start both frontend + CMS locally
+npm run dev
+# Frontend: http://localhost:3000
+# CMS Studio: http://localhost:3333
 ```
 
 ## 📁 Project Structure
@@ -120,6 +125,10 @@ SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 SANITY_API_TOKEN=your-token
 UPSTASH_REDIS_REST_URL=your-redis-url
 UPSTASH_REDIS_REST_TOKEN=your-redis-token
+REVALIDATION_SECRET=your-revalidation-secret
+DEBUG_MODE=false
+DEBUG_API_KEY=your-debug-api-key
+# When DEBUG_MODE=true, /api/dev/* requires Authorization: Bearer $DEBUG_API_KEY
 ```
 
 #### Sanity
@@ -140,6 +149,10 @@ npm install
 ### Running Locally
 
 ```bash
+# From repo root (starts both apps)
+npm run dev
+
+# Or run separately:
 # Terminal 1: Frontend
 cd eats-frontend
 npm run dev

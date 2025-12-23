@@ -1,0 +1,30 @@
+{
+  "name": "eats-workspace",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "node scripts/dev-all.mjs",
+    "dev:frontend": "npm --prefix eats-frontend run dev",
+    "dev:sanity": "npm --prefix sanity run dev",
+    "lint": "npm run lint:frontend && npm run lint:sanity",
+    "lint:frontend": "npm --prefix eats-frontend run lint",
+    "lint:sanity": "npm --prefix sanity run lint",
+    "type-check": "npm run type-check:frontend && npm run type-check:sanity",
+    "type-check:frontend": "npm --prefix eats-frontend run type-check",
+    "type-check:sanity": "npm --prefix sanity run type-check",
+    "format": "npm run format:frontend && npm run format:sanity",
+    "format:frontend": "npm --prefix eats-frontend run format",
+    "format:sanity": "npm --prefix sanity run format",
+    "format:check": "npm run format:check:frontend && npm run format:check:sanity",
+    "format:check:frontend": "npm --prefix eats-frontend run format:check",
+    "format:check:sanity": "npm --prefix sanity run format:check",
+    "build": "npm run build:frontend && npm run build:sanity",
+    "build:frontend": "npm --prefix eats-frontend run build",
+    "build:sanity": "npm --prefix sanity run build",
+    "check": "npm run lint && npm run type-check && npm run build"
+  }
+}
+

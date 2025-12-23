@@ -22,6 +22,8 @@ ux-screenshots/
 # Editor directories
 .vscode/
 .idea/
+.claude/
+.codex/
 *.swp
 *.swo
 *~
