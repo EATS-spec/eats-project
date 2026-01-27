@@ -5,21 +5,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with th
 ## 📚 Comprehensive Documentation
 
 ### Architecture & Design
-- [**ECOSYSTEM_ARCHITECTURE.md**](./ECOSYSTEM_ARCHITECTURE.md) - Full-stack architecture, patterns, and system design
-- [**SECURITY_PATTERNS.md**](./SECURITY_PATTERNS.md) - Authentication, authorization, and security implementations
-- [**DEPLOYMENT_STRATEGIES.md**](./DEPLOYMENT_STRATEGIES.md) - Production deployment patterns and strategies
+- [**ECOSYSTEM_ARCHITECTURE.md**](./docs/architecture/ECOSYSTEM_ARCHITECTURE.md) - Full-stack architecture, patterns, and system design
+- [**SECURITY_PATTERNS.md**](./docs/architecture/SECURITY_PATTERNS.md) - Authentication, authorization, and security implementations
+- [**DEPLOYMENT_STRATEGIES.md**](./docs/architecture/DEPLOYMENT_STRATEGIES.md) - Production deployment patterns and strategies
 
 ### Feature Guides
-- [**AI_INTEGRATION_GUIDE.md**](./AI_INTEGRATION_GUIDE.md) - AI/LLM integration patterns and workflows
-- [**INTERACTIVE_FEATURES.md**](./INTERACTIVE_FEATURES.md) - Voice control, PWA, cooking mode, and more
-- [**DATA_VISUALIZATION_GUIDE.md**](./DATA_VISUALIZATION_GUIDE.md) - Force graphs, charts, and visual analytics
+- [**AI_INTEGRATION_GUIDE.md**](./docs/guides/AI_INTEGRATION_GUIDE.md) - AI/LLM integration patterns and workflows
+- [**INTERACTIVE_FEATURES.md**](./docs/guides/INTERACTIVE_FEATURES.md) - Voice control, PWA, cooking mode, and more
+- [**DATA_VISUALIZATION_GUIDE.md**](./docs/guides/DATA_VISUALIZATION_GUIDE.md) - Force graphs, charts, and visual analytics
 
 ### Development
-- [**DEVELOPER_WORKFLOWS.md**](./DEVELOPER_WORKFLOWS.md) - Closed-loop development, testing, and debugging
-- [**CONTENT_MANAGEMENT_ADVANCED.md**](./CONTENT_MANAGEMENT_ADVANCED.md) - Advanced Sanity CMS patterns
+- [**DEVELOPER_WORKFLOWS.md**](./docs/guides/DEVELOPER_WORKFLOWS.md) - Closed-loop development, testing, and debugging
+- [**CONTENT_MANAGEMENT_ADVANCED.md**](./docs/guides/CONTENT_MANAGEMENT_ADVANCED.md) - Advanced Sanity CMS patterns
 
 ### Future Vision
-- [**INNOVATION_ROADMAP.md**](./INNOVATION_ROADMAP.md) - Upcoming features and possibilities
+- [**INNOVATION_ROADMAP.md**](./docs/planning/INNOVATION_ROADMAP.md) - Upcoming features and possibilities
 
 ## Project Overview
 
@@ -110,7 +110,6 @@ const posts = await sanityClient.fetch(groqQuery)
 ### Sanity Side
 - `sanity.config.ts` - Studio configuration
 - `schemaTypes/` - Content model definitions
-- `scripts/generateRecipeData.mjs` - Sample data generation
 
 ## Common Development Workflows
 
@@ -137,7 +136,7 @@ const posts = await sanityClient.fetch(groqQuery)
    ```
 
 ### Modifying Recipe Fields
-1. Update schema in `sanity/schemaTypes/post.js` or `jsonPost.js`
+1. Update schema in `sanity/schemaTypes/post.ts` or `jsonPost.ts`
 2. Deploy Sanity changes: `cd sanity && npm run deploy`
 3. Update TypeScript types in `eats-frontend/lib/sanity.types.ts`
 4. Adjust Post Adapter if needed: `eats-frontend/lib/adapters/post-adapter.ts`
@@ -160,8 +159,9 @@ node scripts/analyze-json-posts.js
 # Required
 NEXT_PUBLIC_SANITY_PROJECT_ID=5r8ri1sg
 NEXT_PUBLIC_SANITY_DATASET=production
-DATABASE_URL=postgresql://...
-NEXTAUTH_SECRET=...
+NEXT_PUBLIC_SUPABASE_URL=...
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+SUPABASE_SERVICE_ROLE_KEY=...
 
 # Optional
 SANITY_API_TOKEN=...  # For write operations
@@ -281,9 +281,9 @@ For live preview of content changes:
 3. Check Post Adapter logs for conversion errors
 
 ### Build Failures
-1. Frontend requires Prisma generation: `npm run db:generate`
-2. Check Node version: Should be 20.x
-3. Verify all environment variables are set
+1. Check Node version: Should be 20.x (see `.nvmrc`)
+2. Verify all environment variables are set (see `.env.example`)
+3. Clear Next.js cache if needed: `rm -rf eats-frontend/.next`
 
 ## Git & Session Continuity
 

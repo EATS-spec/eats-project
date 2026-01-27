@@ -1,0 +1,6 @@
+[submodule "eats-frontend"]
+	path = eats-frontend
+	url = https://github.com/EATS-spec/eats-frontend.git
+[submodule "sanity"]
+	path = sanity
+	url = https://github.com/EATS-spec/sanity.git
