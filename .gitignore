@@ -18,6 +18,10 @@ repomix-output.xml
 test-*.groq
 *-analysis.js
 ux-screenshots/
+ux-audit/
+
+# Dev artifacts
+eats-architecture-explorer.html
 
 # Editor directories
 .vscode/
