@@ -22,6 +22,9 @@ npm run dev
 
 This repository contains two interconnected applications:
 
+Version source of truth: dependency versions and runtime requirements are defined in
+`eats-frontend/package.json` and `sanity/package.json`.
+
 ```
 /
 ├── eats-frontend/       # Next.js 15 frontend application
@@ -41,7 +44,7 @@ The consumer-facing web application built with Next.js 15, React 18, and TypeScr
 ### **[sanity/](./sanity/)** - Sanity CMS
 The headless CMS providing structured content for recipes, categories, and site settings.
 
-- **CMS**: Sanity Studio v3
+- **CMS**: Sanity Studio v4
 - **Content Types**: Recipes, Categories, Authors, Site Settings
 - **API**: GROQ queries for flexible data fetching
 - **Documentation**: [sanity/README.md](./sanity/README.md)
@@ -280,7 +283,7 @@ User Request → Next.js → Sanity CMS → Processing → UI Rendering
 - Framer Motion
 
 **Backend & Services**
-- Sanity CMS v3
+- Sanity CMS v4
 - Supabase (Auth + PostgreSQL)
 - Upstash Redis (optional)
 - Vercel Edge Functions
