@@ -1,6 +1,6 @@
 # 🍽️ EATS - Modern Recipe & Food Blog Platform
 
-A full-stack, performant recipe and food blog application featuring AI integration, advanced search, PWA capabilities, and a futuristic neon design aesthetic.
+A full-stack, performant recipe and food blog application featuring AI integration, advanced search, PWA capabilities, and a warm editorial cooking experience.
 
 ## 🚀 Quick Start
 
@@ -27,16 +27,16 @@ Version source of truth: dependency versions and runtime requirements are define
 
 ```
 /
-├── eats-frontend/       # Next.js 15 frontend application
+├── eats-frontend/       # Next.js 16 frontend application
 ├── sanity/              # Sanity CMS content management
 ├── docs/                # Project-wide documentation
 └── CLAUDE.md            # AI assistant guidance
 ```
 
 ### **[eats-frontend/](./eats-frontend/)** - Next.js Frontend
-The consumer-facing web application built with Next.js 15, React 18, and TypeScript.
+The consumer-facing web application built with Next.js 16, React 19, and TypeScript.
 
-- **Tech Stack**: Next.js 15, React 18, TypeScript, Tailwind CSS v4, HeroUI
+- **Tech Stack**: Next.js 16, React 19, TypeScript, Tailwind CSS v4, HeroUI
 - **Features**: PWA, Advanced Search, Social Features, Cooking Tools
 - **Deployment**: Vercel (Production-ready)
 - **Documentation**: [eats-frontend/docs/](./eats-frontend/docs/)
@@ -44,7 +44,7 @@ The consumer-facing web application built with Next.js 15, React 18, and TypeScr
 ### **[sanity/](./sanity/)** - Sanity CMS
 The headless CMS providing structured content for recipes, categories, and site settings.
 
-- **CMS**: Sanity Studio v4
+- **CMS**: Sanity Studio v5
 - **Content Types**: Recipes, Categories, Authors, Site Settings
 - **API**: GROQ queries for flexible data fetching
 - **Documentation**: [sanity/README.md](./sanity/README.md)
@@ -98,7 +98,7 @@ Comprehensive documentation covering architecture, guides, and planning.
 - Voice control (experimental)
 
 ### 🎨 Modern Design
-- Futuristic neon aesthetic
+- Warm editorial recipe aesthetic
 - Dark/light theme support
 - Glassmorphism effects
 - Smooth animations
@@ -275,15 +275,15 @@ User Request → Next.js → Sanity CMS → Processing → UI Rendering
 ### Technology Stack
 
 **Frontend**
-- Next.js 15.3.4 (App Router)
-- React 18.2.0
-- TypeScript 5.x
-- Tailwind CSS 4.1.x
+- Next.js 16.2.x (App Router)
+- React 19.2.x
+- TypeScript 6.x
+- Tailwind CSS 4.2.x
 - HeroUI Components
 - Framer Motion
 
 **Backend & Services**
-- Sanity CMS v4
+- Sanity CMS v5
 - Supabase (Auth + PostgreSQL)
 - Upstash Redis (optional)
 - Vercel Edge Functions

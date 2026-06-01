@@ -418,8 +418,8 @@ export SANITY_TOKEN="your-token-here"
 # Create a file with your JSON recipe
 echo '{"title": "Test Recipe", ...}' > recipe.json
 
-# Import using the script (coming soon)
-node scripts/import-ai-recipe.js recipe.json
+# Create content with the repo automation or paste the validated JSON into Sanity Studio
+npm --prefix sanity run recipes:weekly
 ```
 
 ---

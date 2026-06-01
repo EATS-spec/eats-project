@@ -173,7 +173,7 @@ User Interaction → Client Component
 
 ## Technology Stack Deep Dive
 
-### Frontend (Next.js 15.3.4)
+### Frontend (Next.js 16.2.x)
 - **App Router**: Modern routing with layouts
 - **Server Components**: Default server-side rendering
 - **Client Components**: Interactive features with 'use client'
