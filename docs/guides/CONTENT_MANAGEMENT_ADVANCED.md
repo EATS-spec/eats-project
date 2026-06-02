@@ -1,5 +1,9 @@
 # Advanced Content Management Guide
 
+> Current recipe workflow note: new EATS recipes should use the canonical Sanity
+> `recipe` document type described in `docs/AI_RECIPE_PROMPT.md`. Older examples
+> in this guide may mention `post` or `jsonPost`; treat those as legacy context.
+
 ## Overview
 
 This guide explores advanced content management patterns in the EATS ecosystem, leveraging Sanity CMS's powerful features combined with the innovative dual-content system to create a flexible, scalable content platform.
