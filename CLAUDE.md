@@ -25,8 +25,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with th
 
 This is a full-stack food blog application consisting of two interconnected projects:
 
-1. **`eats-frontend/`** - Next.js 15 frontend application (consumer)
-2. **`sanity/`** - Sanity CMS backend (content provider)
+1. **`eats-frontend/`** - Next.js 16 frontend application (consumer)
+2. **`sanity/`** - Sanity 5 Studio CMS backend (content provider)
 
 ## Quick Start Commands
 
