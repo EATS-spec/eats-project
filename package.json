@@ -24,6 +24,10 @@
     "build": "npm run build:frontend && npm run build:sanity",
     "build:frontend": "npm --prefix eats-frontend run build",
     "build:sanity": "npm --prefix sanity run build",
+    "recipes:inspect": "npm --prefix sanity run recipes:inspect",
+    "recipes:create": "npm --prefix sanity run recipes:create --",
+    "recipes:create:dry-run": "npm --prefix sanity run recipes:create:dry-run",
+    "recipes:weekly": "npm --prefix sanity run recipes:weekly",
     "check": "npm run lint && npm run type-check && npm run build"
   }
 }

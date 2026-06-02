@@ -1,5 +1,10 @@
 # AI Integration Guide for EATS
 
+> Current recipe workflow note: new EATS recipes should use the canonical Sanity
+> `recipe` document type described in `docs/AI_RECIPE_PROMPT.md`. Older examples
+> in this guide may mention `jsonPost`; treat that as legacy background, not the
+> path for new content.
+
 ## Overview
 
 The EATS platform is architected with AI integration at its core, featuring a unique dual-content system that seamlessly handles both human-created and AI-generated recipes. This guide explores the current AI capabilities and provides patterns for enhanced AI integration.
