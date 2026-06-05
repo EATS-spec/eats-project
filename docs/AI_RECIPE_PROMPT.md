@@ -20,9 +20,31 @@ Rules:
 - Also fill the AI/helper ingredient fields when you can.
 - Fill step timing fields when the step has an obvious time.
 - Use categorySlugs instead of category reference IDs.
-- Include imageSource.url only if the image URL is known and suitable.
+- Include local file paths for recipe images created during the thread.
+- Default to a compact media pack: finished dish, one useful gallery/process image,
+  and one step image only when the visual cue helps the cook.
+- Include imageSource.url only when using a known, suitable remote image source.
+- Keep public fields clean: never put internal workflow labels in captions,
+  credits, alt text, sourceCredit, descriptions, or titles.
+- Images should look like natural editorial food photography. Avoid illustration,
+  CGI, painterly, plastic, or obviously synthetic styling.
 - Do not include old post/jsonPost fields.
 ```
+
+## Simple Workflow
+
+The user should be able to ask in plain language:
+
+```text
+Make an EATS recipe for [DISH NAME] and send it to Sanity as a draft.
+```
+
+Codex then handles the hidden work: writing the recipe, generating useful images
+in the thread when needed, saving those images locally, running checks, and
+sending a Sanity draft.
+
+Do not design this as a Sanity AI workflow. Sanity stores, previews, reviews, and
+publishes the draft. Codex does the AI work before the draft reaches Sanity.
 
 ## Canonical Recipe Payload
 
@@ -76,7 +98,13 @@ Rules:
       "instruction": "Bake until the edges are golden and the center is set.",
       "tip": "Start checking early if your oven runs hot.",
       "timingForStep": "12-14 minutes",
-      "activeTimeMinutes": 14
+      "activeTimeMinutes": 14,
+      "imageSource": {
+        "filePath": "output/generated-images/recipe-title-step-2.png",
+        "filename": "recipe-title-step-2.png",
+        "alt": "Close view of the baked dish showing golden edges",
+        "caption": "The center should be just set before cooling."
+      }
     }
   ],
 
@@ -96,9 +124,6 @@ Rules:
     "notes": "Estimated per serving."
   },
 
-  "testedStatus": "draft",
-  "testedBy": null,
-  "lastTestedAt": null,
   "whyItWorks": [
     "A short, practical reason this recipe succeeds.",
     "Another practical reason tied to technique or timing."
@@ -107,14 +132,23 @@ Rules:
 
   "mainImage": {
     "alt": "Plain-language description of the finished dish",
-    "caption": "Optional image credit or caption"
+    "caption": "Short caption describing the finished dish, or leave blank"
   },
   "imageSource": {
     "url": "https://example.com/image.jpg",
+    "filePath": "output/generated-images/recipe-title.png",
     "filename": "recipe-title.jpg",
     "credit": "Photo credit, if applicable",
     "license": "License note, if applicable"
   },
+  "gallery": [
+    {
+      "filePath": "output/generated-images/recipe-title-process.png",
+      "filename": "recipe-title-process.png",
+      "alt": "Ingredients arranged before cooking",
+      "caption": "Prep the ingredients before starting the active cooking steps."
+    }
+  ],
 
   "author": {
     "name": "EATS"
@@ -132,12 +166,14 @@ Required before publishing:
 - `ingredientSections`
 - `steps`
 - `mainImage.alt`
-- `imageSource.url` or an existing Sanity image asset reference
+- `imageSource.filePath`, `imageSource.url`, or an existing Sanity image asset reference
 
 Useful but not always required:
 
 - `quantity`, `unit`, `ingredientName`, `preparation`
 - `timingForStep`, `activeTimeMinutes`
+- `gallery` with process or serving images created during the thread
+- `steps[].imageSource` when a step benefits from a visual cue
 - `equipmentText`
 - `whyItWorks`
 - `nutrition`
@@ -197,6 +233,10 @@ Testing status:
 
 ## Plain-English Meaning
 
+Use this file as the recipe contract, not as something the user needs to read
+before asking for a recipe. The goal is for Codex to absorb the structure so the
+user can stay at the level of the dish idea and editorial direction.
+
 The friendly fields are for people:
 
 - `text`: what a cook reads in the ingredient list.
@@ -208,4 +248,4 @@ The helper fields are for the app:
 - `quantity`, `unit`, `ingredientName`, `preparation`: scaling, pantry matching, and shopping lists.
 - `timingForStep`, `activeTimeMinutes`: cooking mode and timers.
 - `categorySlugs`, `tags`, `keywords`: organization and search.
-- `testedStatus`, `whyItWorks`, `sourceCredit`: trust and editorial context.
+- `whyItWorks`, `editorialNotes`, `sourceCredit`: optional editorial context.
