@@ -44,16 +44,13 @@ Why this matters: NYT Cooking and Serious Eats win because customers believe the
 
 Tasks:
 
-1. Add editorial trust fields to the native Sanity recipe schema:
-   - `testedStatus`
-   - `testedBy`
-   - `lastTestedAt`
+1. Add lightweight editorial notes to the native Sanity recipe schema:
    - `whyItWorks`
    - `editorialNotes`
    - optional `sourceCredit`
-2. Surface a compact "Kitchen notes" or "Why this works" block on recipe detail pages when the fields exist.
+2. Surface a compact "Why this works" or "Recipe notes" block on recipe detail pages when the fields exist.
 3. Add a CMS-side publish checklist or document badge so incomplete recipes are easy to spot before launch.
-4. Add tests for the recipe-page model so missing trust fields never break older content.
+4. Add tests for the recipe-page model so missing editorial fields never break older content.
 
 ### P0: Discovery That Matches Real Customer Intent
 
