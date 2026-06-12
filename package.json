@@ -34,6 +34,7 @@
     "recipes:create": "npm --prefix sanity run recipes:create --",
     "recipes:create:dry-run": "npm --prefix sanity run recipes:create:dry-run",
     "recipes:weekly": "npm --prefix sanity run recipes:weekly",
+    "recipes:weekly:canonical-url-gate": "npm --prefix sanity run recipes:weekly:canonical-url-gate",
     "check": "npm run lint && npm run type-check && npm run build"
   }
 }
